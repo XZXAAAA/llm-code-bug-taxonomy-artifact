@@ -23,7 +23,6 @@ SCAN_FILES = [
     "config.yaml",
     "requirements.txt",
     "CITATION.cff",
-    ".zenodo.json",
 ]
 
 TEXT_SUFFIXES = {

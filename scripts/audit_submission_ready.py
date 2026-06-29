@@ -16,7 +16,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 NO_TBD_FILES = [
     "CITATION.cff",
-    ".zenodo.json",
     "paper/software_impacts.tex",
     "submission_materials/SOFTWARE_METADATA.md",
     "submission_materials/SUBMISSION_STATEMENTS.md",

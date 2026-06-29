@@ -24,7 +24,7 @@ fields after the repository and archived release are public.
 | Prompt metadata | `submission_materials/PROMPT_INVENTORY.md` and `results/tables/prompt_inventory.csv` |
 | Artifact manifest | `results/tables/artifact_manifest.csv` and `results/tables/artifact_manifest.json` |
 | Submission statements | `submission_materials/SUBMISSION_STATEMENTS.md` |
-| Archive metadata | `.zenodo.json` |
+| Archive metadata | `CITATION.cff` |
 | Support email | zixiaox2@illinois.edu |
 
 ## Software Functionality

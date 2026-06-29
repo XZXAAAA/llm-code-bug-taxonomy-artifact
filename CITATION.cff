@@ -19,8 +19,8 @@ keywords:
   - empirical software engineering
   - reproducibility
 license: MIT
-repository-code: "TBD"
-url: "TBD"
+repository-code: "https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact"
+url: "https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact"
 version: "0.1.0"
 date-released: "2026-06-23"
 preferred-citation:
@@ -33,4 +33,3 @@ preferred-citation:
       affiliation: University of Illinois Urbana-Champaign
   year: 2026
   journal: "arXiv preprint"
-  url: "TBD"

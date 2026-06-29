@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import argparse
-import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,32 +24,17 @@ def _write(path: Path, text: str, dry_run: bool) -> bool:
 def update_citation(repo_url: str, archive_url: str, arxiv_url: str, dry_run: bool) -> bool:
     path = ROOT / "CITATION.cff"
     text = _read(path)
-    text = text.replace('repository-code: "TBD"', f'repository-code: "{repo_url}"')
-    text = text.replace('url: "TBD"', f'url: "{archive_url}"', 1)
-    text = text.replace('  url: "TBD"', f'  url: "{arxiv_url}"')
+    text = re.sub(r'repository-code: ".*"', f'repository-code: "{repo_url}"', text, count=1)
+    text = re.sub(r'^url: ".*"', f'url: "{archive_url}"', text, count=1, flags=re.MULTILINE)
+    if "  url: " in text:
+        text = re.sub(r'^  url: ".*"', f'  url: "{arxiv_url}"', text, count=1, flags=re.MULTILINE)
+    else:
+        text = text.replace('  journal: "arXiv preprint"', f'  journal: "arXiv preprint"\n  url: "{arxiv_url}"')
     return _write(path, text, dry_run)
 
 
 def update_zenodo(repo_url: str, arxiv_url: str, dry_run: bool) -> bool:
-    path = ROOT / ".zenodo.json"
-    data = json.loads(_read(path))
-    data["related_identifiers"] = [
-        {
-            "identifier": arxiv_url,
-            "relation": "isSupplementTo",
-            "scheme": "url",
-            "resource_type": "publication-preprint",
-        },
-        {
-            "identifier": repo_url,
-            "relation": "isIdenticalTo",
-            "scheme": "url",
-            "resource_type": "software",
-        },
-    ]
-    data["notes"] = "Do not archive .env or API keys."
-    text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
-    return _write(path, text, dry_run)
+    return False
 
 
 def update_software_impacts(repo_url: str, archive_url: str, dry_run: bool) -> bool:
@@ -104,7 +89,6 @@ def main() -> None:
 
     changed = {
         "CITATION.cff": update_citation(args.repo_url, args.archive_url, args.arxiv_url, args.dry_run),
-        ".zenodo.json": update_zenodo(args.repo_url, args.arxiv_url, args.dry_run),
         "paper/software_impacts.tex": update_software_impacts(args.repo_url, args.archive_url, args.dry_run),
         "submission_materials/SOFTWARE_METADATA.md": update_software_metadata(args.repo_url, args.archive_url, args.dry_run),
         "submission_materials/SUBMISSION_STATEMENTS.md": update_submission_statements(args.repo_url, args.archive_url, args.arxiv_url, args.dry_run),

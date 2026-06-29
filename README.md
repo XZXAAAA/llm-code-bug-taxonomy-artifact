@@ -91,7 +91,7 @@ PROTOCOL.md                    pre-registered research design
 REPRODUCIBILITY.md             artifact verification and full regeneration guide
 config.yaml                    provider, models, generation settings
 CITATION.cff                   citation metadata for software/archive release
-.zenodo.json                   Zenodo metadata template
+CITATION.cff                   Citation and archive metadata
 .github/workflows/             GitHub Actions release audit workflow
 src/
   generate.py                  multi-model generation through OpenRouter
@@ -116,7 +116,7 @@ scripts/
   audit_dataset_integrity.py    row-level coverage and cross-file consistency checks
   audit_numeric_claims.py       structured check that paper numbers match result files
   audit_text_cleanliness.py     UTF-8 and mojibake guard for source and submission text
-  audit_metadata.py             CFF and Zenodo metadata structure checks
+  audit_metadata.py             Citation metadata structure checks
   test_fill_release_links.py    temporary-copy self-test for DOI/link replacement
   audit_release.py              release consistency and secret-pattern audit
   audit_submission_ready.py     strict final gate for DOI/link/LaTeX readiness

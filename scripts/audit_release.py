@@ -22,7 +22,6 @@ REQUIRED_FILES = [
     "README.md",
     "REPRODUCIBILITY.md",
     "PROTOCOL.md",
-    ".zenodo.json",
     ".github/workflows/release-audit.yml",
     "LICENSE",
     "CITATION.cff",
@@ -497,7 +496,6 @@ def audit_artifact_manifest(failures: list[str]) -> None:
         "scripts/audit_metadata.py",
         "scripts/test_fill_release_links.py",
         "REPRODUCIBILITY.md",
-        ".zenodo.json",
         ".github/workflows/release-audit.yml",
         "submission_materials/DATA_DICTIONARY.md",
         "submission_materials/SUBMISSION_STATEMENTS.md",
@@ -677,23 +675,6 @@ def audit_pdf_build_guide(failures: list[str]) -> None:
 
 
 def audit_submission_metadata(failures: list[str]) -> None:
-    zenodo = ROOT / ".zenodo.json"
-    if not zenodo.exists():
-        fail("missing .zenodo.json", failures)
-    else:
-        try:
-            data = json.loads(zenodo.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as exc:
-            fail(f".zenodo.json is invalid JSON: {exc}", failures)
-        else:
-            for key in ["title", "upload_type", "description", "creators", "license", "version"]:
-                if key in data:
-                    ok(f".zenodo.json contains {key}")
-                else:
-                    fail(f".zenodo.json missing {key}", failures)
-            if "TBD" in zenodo.read_text(encoding="utf-8"):
-                ok(".zenodo.json still has explicit TBD placeholders for repository/arXiv links")
-
     statements = ROOT / "submission_materials/SUBMISSION_STATEMENTS.md"
     if not statements.exists():
         fail("missing submission_materials/SUBMISSION_STATEMENTS.md", failures)
@@ -714,7 +695,11 @@ def audit_submission_metadata(failures: list[str]) -> None:
     citation = ROOT / "CITATION.cff"
     if citation.exists():
         text = citation.read_text(encoding="utf-8")
-        for snippet in ["license: MIT", "version: \"0.1.0\"", "repository-code: \"TBD\""]:
+        for snippet in [
+            "license: MIT",
+            "version: \"0.1.0\"",
+            "repository-code: \"https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact\"",
+        ]:
             if snippet in text:
                 ok(f"CITATION.cff contains {snippet}")
             else:
@@ -757,7 +742,6 @@ def audit_release_bundle(failures: list[str]) -> None:
         "README.md",
         "REPRODUCIBILITY.md",
         "CITATION.cff",
-        ".zenodo.json",
         "paper/main.tex",
         "paper/software_impacts.tex",
         "data/raw/HumanEval.jsonl",

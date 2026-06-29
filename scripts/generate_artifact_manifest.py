@@ -13,7 +13,6 @@ OUT_JSON = ROOT / "results" / "tables" / "artifact_manifest.json"
 
 INCLUDE_DIRS = [
     "config.yaml",
-    ".zenodo.json",
     ".github",
     "README.md",
     "REPRODUCIBILITY.md",

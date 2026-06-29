@@ -170,7 +170,7 @@ Important:
 | Dataset coverage and cross-file consistency | `scripts/audit_dataset_integrity.py` |
 | Manuscript numeric-claim consistency | `scripts/audit_numeric_claims.py` |
 | UTF-8 and mojibake guard for source/submission text | `scripts/audit_text_cleanliness.py` |
-| CFF and Zenodo metadata structure checks | `scripts/audit_metadata.py` |
+| Citation metadata structure checks | `scripts/audit_metadata.py` |
 | DOI/link replacement self-test | `scripts/test_fill_release_links.py` |
 
 ## Manuscript Builds

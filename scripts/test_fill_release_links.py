@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import shutil
 import tempfile
 from pathlib import Path
@@ -15,7 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 TARGET_FILES = [
     "CITATION.cff",
-    ".zenodo.json",
     "paper/software_impacts.tex",
     "submission_materials/SOFTWARE_METADATA.md",
     "submission_materials/SUBMISSION_STATEMENTS.md",
@@ -53,13 +51,6 @@ def assert_expected_links(tmp_root: Path) -> None:
     if citation["preferred-citation"]["url"] != ARXIV_URL:
         raise AssertionError("CITATION.cff preferred-citation URL was not filled")
 
-    zenodo = json.loads((tmp_root / ".zenodo.json").read_text(encoding="utf-8"))
-    related = {item["relation"]: item["identifier"] for item in zenodo["related_identifiers"]}
-    if related.get("isSupplementTo") != ARXIV_URL:
-        raise AssertionError(".zenodo.json arXiv related identifier was not filled")
-    if related.get("isIdenticalTo") != REPO_URL:
-        raise AssertionError(".zenodo.json repository related identifier was not filled")
-
     software_impacts = (tmp_root / "paper/software_impacts.tex").read_text(encoding="utf-8")
     for link in [REPO_URL, ARCHIVE_URL]:
         if link not in software_impacts:
@@ -86,7 +77,6 @@ def main() -> None:
         try:
             changed = [
                 fill_release_links.update_citation(REPO_URL, ARCHIVE_URL, ARXIV_URL, dry_run=False),
-                fill_release_links.update_zenodo(REPO_URL, ARXIV_URL, dry_run=False),
                 fill_release_links.update_software_impacts(REPO_URL, ARCHIVE_URL, dry_run=False),
                 fill_release_links.update_software_metadata(REPO_URL, ARCHIVE_URL, dry_run=False),
                 fill_release_links.update_submission_statements(REPO_URL, ARCHIVE_URL, ARXIV_URL, dry_run=False),

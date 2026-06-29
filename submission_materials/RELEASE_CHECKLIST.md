@@ -7,7 +7,7 @@ Use this checklist before arXiv, Zenodo, Software Impacts, or PeerJ submission.
 - [ ] No `.env` file committed.
 - [ ] No API keys in tracked files.
 - [ ] `LICENSE` exists and matches the license named in `CITATION.cff`.
-- [ ] `.zenodo.json` has real repository/arXiv identifiers instead of `TBD`.
+- [ ] `CITATION.cff` has real repository metadata and no invalid placeholder URLs.
 - [ ] `CITATION.cff` has real repository and archive URLs.
 - [ ] `python scripts/fill_release_links.py --repo-url <URL> --archive-url <DOI_URL> --arxiv-url <URL>` has been run after public links are available.
 - [ ] `README.md` explains how to reproduce the pipeline.
@@ -34,7 +34,7 @@ Use this checklist before arXiv, Zenodo, Software Impacts, or PeerJ submission.
 - [ ] `python scripts/audit_dataset_integrity.py` verifies raw/results/labels coverage and key consistency.
 - [ ] `python scripts/audit_numeric_claims.py` verifies manuscript/support-document numbers against result files.
 - [ ] `python scripts/audit_text_cleanliness.py` verifies UTF-8 text and rejects configured mojibake markers.
-- [ ] `python scripts/audit_metadata.py` verifies CFF and Zenodo metadata structure.
+- [ ] `python scripts/audit_metadata.py` verifies citation metadata structure.
 - [ ] `python scripts/test_fill_release_links.py` verifies DOI/link replacement on temporary copies.
 - [ ] `python scripts/compile_manuscripts.py` generates manuscript PDFs in `build/pdf/`.
 - [ ] `python scripts/audit_submission_ready.py` passes after repository/DOI links and LaTeX are ready.
