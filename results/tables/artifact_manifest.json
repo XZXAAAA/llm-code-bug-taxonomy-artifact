@@ -7,9 +7,9 @@
   },
   {
     "path": "CITATION.cff",
-    "bytes": 1311,
+    "bytes": 1293,
     "lines": 35,
-    "sha256": "5c968472a4e1651610a328d1b689a12ab6b025a2dd37bf882b41b0459ef3dfc3"
+    "sha256": "e6e7abcc77f6d41451f8e45eac96c4a76d62c04bb26d10f6b42b110f1aad52e4"
   },
   {
     "path": "LICENSE",
@@ -25,9 +25,9 @@
   },
   {
     "path": "README.md",
-    "bytes": 8225,
-    "lines": 162,
-    "sha256": "f08cc88d069d6604f74529f0b2bdece4a7192d3b1a7bbb7e6bb4174d13f7c241"
+    "bytes": 8317,
+    "lines": 164,
+    "sha256": "147a3216357270cefdf1d3dd617919f64675b06cfacb64e52286ecfed954bd53"
   },
   {
     "path": "REPRODUCIBILITY.md",
@@ -109,9 +109,9 @@
   },
   {
     "path": "paper/software_impacts.tex",
-    "bytes": 9403,
+    "bytes": 9451,
     "lines": 174,
-    "sha256": "74943b859dbd13449245a13791d6ea5a46a48e9b044b4192982abbab9e85fbbc"
+    "sha256": "f3d2e46ce4e707b290123b85e88933aa433f31d5d881e3d4d9e9de58f448cd09"
   },
   {
     "path": "requirements.txt",
@@ -271,9 +271,9 @@
   },
   {
     "path": "scripts/audit_release.py",
-    "bytes": 36469,
+    "bytes": 36482,
     "lines": 1033,
-    "sha256": "067baa0a56a019d5dedaba8d6f4ddde4f3534b02e867067d61230b5cd70995b9"
+    "sha256": "1672c4b4d135ebd7f5f7214de082b49793cc2e26608173ec6a3e77e12d525484"
   },
   {
     "path": "scripts/audit_submission_ready.py",
@@ -295,9 +295,9 @@
   },
   {
     "path": "scripts/fill_release_links.py",
-    "bytes": 4720,
-    "lines": 103,
-    "sha256": "eb53aadb865a8e26871ce702b7af1fc469fab2e39486382095a7927f3a2c0205"
+    "bytes": 5437,
+    "lines": 116,
+    "sha256": "91d2077fec0547ff5dea60eb0f8f3c9356f013149935d092f3213bbe30008d80"
   },
   {
     "path": "scripts/generate_artifact_manifest.py",
@@ -469,9 +469,9 @@
   },
   {
     "path": "submission_materials/SOFTWARE_METADATA.md",
-    "bytes": 3141,
-    "lines": 65,
-    "sha256": "9f114fd91071696f209719278c6ee376b401ed10485bbebc96f501b53bb9d097"
+    "bytes": 3124,
+    "lines": 62,
+    "sha256": "2e73412a79269a1feaa48f68a33ac5d326272893ea55fdf2419d697ec3c3f32b"
   },
   {
     "path": "submission_materials/SUBMISSION_CHECKLIST.md",
@@ -481,8 +481,8 @@
   },
   {
     "path": "submission_materials/SUBMISSION_STATEMENTS.md",
-    "bytes": 2811,
-    "lines": 70,
-    "sha256": "33bf5d0a04a732af8956fdbe9833262f4cd2e8bb05165826bfad03031d32fc1b"
+    "bytes": 3036,
+    "lines": 69,
+    "sha256": "7cc2b6260568826df4b1a5cf2351d4370b671b364c22a61187f40f8ead40504f"
   }
 ]

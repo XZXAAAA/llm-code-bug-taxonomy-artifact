@@ -867,7 +867,7 @@ def audit_manuscript_text(failures: list[str]) -> None:
         "A Reproducible Pipeline for Classifying Bug Types in LLM-Generated Code",
         "Cohen's $\\kappa=0.305$",
         "Impact Overview",
-        "TBD: archived software DOI",
+        "https://doi.org/10.5281/zenodo.21025967",
     ]:
         if item in si_text:
             ok(f"paper/software_impacts.tex contains {item}")

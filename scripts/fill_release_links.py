@@ -21,9 +21,19 @@ def _write(path: Path, text: str, dry_run: bool) -> bool:
     return changed
 
 
+def _replace_existing_links(text: str, repo_url: str, archive_url: str) -> str:
+    text = re.sub(
+        r"https://github\.com/[A-Za-z0-9_.-]+/llm-code-bug-taxonomy-artifact",
+        repo_url,
+        text,
+    )
+    text = re.sub(r"https://doi\.org/10\.5281/zenodo\.\d+", archive_url, text)
+    return text
+
+
 def update_citation(repo_url: str, archive_url: str, arxiv_url: str, dry_run: bool) -> bool:
     path = ROOT / "CITATION.cff"
-    text = _read(path)
+    text = _replace_existing_links(_read(path), repo_url, archive_url)
     text = re.sub(r'repository-code: ".*"', f'repository-code: "{repo_url}"', text, count=1)
     text = re.sub(r'^url: ".*"', f'url: "{archive_url}"', text, count=1, flags=re.MULTILINE)
     if "  url: " in text:
@@ -39,7 +49,7 @@ def update_zenodo(repo_url: str, arxiv_url: str, dry_run: bool) -> bool:
 
 def update_software_impacts(repo_url: str, archive_url: str, dry_run: bool) -> bool:
     path = ROOT / "paper" / "software_impacts.tex"
-    text = _read(path)
+    text = _replace_existing_links(_read(path), repo_url, archive_url)
     text = text.replace("TBD: public repository URL", repo_url)
     text = text.replace("TBD: archived release DOI or reproducible capsule URL", archive_url)
     text = text.replace("TBD: archived software DOI", archive_url)
@@ -48,7 +58,7 @@ def update_software_impacts(repo_url: str, archive_url: str, dry_run: bool) -> b
 
 def update_software_metadata(repo_url: str, archive_url: str, dry_run: bool) -> bool:
     path = ROOT / "submission_materials" / "SOFTWARE_METADATA.md"
-    text = _read(path)
+    text = _replace_existing_links(_read(path), repo_url, archive_url)
     text = text.replace("| Permanent link to code/repository | TBD |", f"| Permanent link to code/repository | {repo_url} |")
     text = text.replace("| Permanent link to reproducible capsule/archive | TBD |", f"| Permanent link to reproducible capsule/archive | {archive_url} |")
     text = text.replace("| Software citation DOI | TBD |", f"| Software citation DOI | {archive_url} |")
@@ -61,7 +71,7 @@ def update_software_metadata(repo_url: str, archive_url: str, dry_run: bool) -> 
 
 def update_submission_statements(repo_url: str, archive_url: str, arxiv_url: str, dry_run: bool) -> bool:
     path = ROOT / "submission_materials" / "SUBMISSION_STATEMENTS.md"
-    text = _read(path)
+    text = _replace_existing_links(_read(path), repo_url, archive_url)
     text = text.replace(
         "These statements are draft text for arXiv, Software Impacts, PeerJ Computer\n"
         "Science, or repository/archive submissions. Replace `TBD` fields before formal\n"
@@ -76,6 +86,9 @@ def update_submission_statements(repo_url: str, archive_url: str, arxiv_url: str
         "artifact-audit scripts. Repository and archived artifact: TBD.",
         f"artifact-audit scripts. Repository: {repo_url}. Archived artifact: {archive_url}. arXiv: {arxiv_url}.",
     )
+    archive_marker = f"Archived artifact: {archive_url}."
+    if archive_marker in text and f"arXiv: {arxiv_url}" not in text:
+        text = text.replace(archive_marker, f"{archive_marker} arXiv: {arxiv_url}.")
     return _write(path, text, dry_run)
 
 

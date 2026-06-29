@@ -1,15 +1,12 @@
 # Software Metadata
 
-This file is a draft metadata table for Elsevier Software Impacts. Replace `TBD`
-fields after the repository and archived release are public.
-
 | Field | Value |
 |---|---|
 | Software name | Bug Types in LLM-Generated Code |
 | Current version | 0.1.0 |
-| Permanent link to code/repository | TBD |
-| Permanent link to reproducible capsule/archive | TBD |
-| Software citation DOI | TBD |
+| Permanent link to code/repository | https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact |
+| Permanent link to reproducible capsule/archive | https://doi.org/10.5281/zenodo.21025967 |
+| Software citation DOI | https://doi.org/10.5281/zenodo.21025967 |
 | Legal code license | MIT |
 | Code versioning system | Git |
 | Software code languages | Python, LaTeX |

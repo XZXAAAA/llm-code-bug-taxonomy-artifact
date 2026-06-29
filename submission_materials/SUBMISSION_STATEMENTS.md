@@ -1,8 +1,7 @@
 # Submission Statements
 
 These statements are draft text for arXiv, Software Impacts, PeerJ Computer
-Science, or repository/archive submissions. Replace `TBD` fields before formal
-submission.
+Science, or repository/archive submissions.
 
 ## Highlights
 
@@ -31,17 +30,17 @@ keys are excluded. Hosted model identifiers may route to provider-current weight
 so the released JSONL/CSV files should be treated as the authoritative artifact for
 the reported results.
 
-Repository URL: TBD
+Repository URL: https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact
 
-Archive DOI: TBD
+Archive DOI: https://doi.org/10.5281/zenodo.21025967
 
 ## Code Availability
 
 The source code is available under the MIT License.
 
-Repository URL: TBD
+Repository URL: https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact
 
-Archived release: TBD
+Archived release: https://doi.org/10.5281/zenodo.21025967
 
 ## CRediT Author Statement
 
@@ -67,4 +66,4 @@ fields are blank; the results should not be described as human-validated.
 ## Suggested arXiv Comment
 
 Reproducible pilot study; includes code, generated outputs, labels, figures, and
-artifact-audit scripts. Repository and archived artifact: TBD.
+artifact-audit scripts. Repository: https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact. Archived artifact: https://doi.org/10.5281/zenodo.21025967.

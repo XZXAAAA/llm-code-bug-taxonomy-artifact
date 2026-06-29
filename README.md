@@ -1,5 +1,7 @@
 # Bug Types in LLM-Generated Code: Empirical Study
 
+[![DOI](https://zenodo.org/badge/1283724668.svg)](https://doi.org/10.5281/zenodo.21025966)
+
 A reproducible empirical study of what kinds of bugs appear in LLM-generated
 Python code. Four hosted models are evaluated on HumanEval; failures are
 categorized into a bug taxonomy and compared across models.
