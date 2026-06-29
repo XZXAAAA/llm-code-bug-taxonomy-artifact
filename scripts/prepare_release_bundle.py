@@ -9,7 +9,7 @@ from generate_artifact_manifest import ROOT, iter_files
 
 VERSION = "0.1.0"
 OUT_DIR = ROOT / "build" / "release"
-OUT_ZIP = OUT_DIR / f"llm-bug-types-artifact-v{VERSION}.zip"
+OUT_ZIP = OUT_DIR / f"llm-code-bug-taxonomy-artifact-v{VERSION}.zip"
 
 EXTRA_FILES = [
     ROOT / "results" / "tables" / "artifact_manifest.csv",

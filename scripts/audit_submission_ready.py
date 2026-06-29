@@ -86,7 +86,7 @@ def audit_tex_tools(failures: list[str]) -> None:
 
 
 def audit_release_bundle(failures: list[str]) -> None:
-    bundle = ROOT / "build" / "release" / "llm-bug-types-artifact-v0.1.0.zip"
+    bundle = ROOT / "build" / "release" / "llm-code-bug-taxonomy-artifact-v0.1.0.zip"
     if bundle.exists():
         ok(f"found release bundle: {bundle.relative_to(ROOT)}")
     else:

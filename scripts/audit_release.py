@@ -745,9 +745,9 @@ def audit_ci_workflow(failures: list[str]) -> None:
 
 
 def audit_release_bundle(failures: list[str]) -> None:
-    bundle = ROOT / "build" / "release" / "llm-bug-types-artifact-v0.1.0.zip"
+    bundle = ROOT / "build" / "release" / "llm-code-bug-taxonomy-artifact-v0.1.0.zip"
     if not bundle.exists():
-        fail("missing build/release/llm-bug-types-artifact-v0.1.0.zip", failures)
+        fail("missing build/release/llm-code-bug-taxonomy-artifact-v0.1.0.zip", failures)
         return
 
     with zipfile.ZipFile(bundle) as zf:

@@ -91,7 +91,7 @@ Expected result:
   - `exact_agreement=42/96 (43.8%)`
   - `cohens_kappa=0.305 (fair)`
 - `build/arxiv_package/` contains a self-contained arXiv source package.
-- `build/release/llm-bug-types-artifact-v0.1.0.zip` contains a clean release bundle
+- `build/release/llm-code-bug-taxonomy-artifact-v0.1.0.zip` contains a clean release bundle
   for Zenodo or manual artifact sharing.
 - `results/human_eval/review_sheet.csv` contains 40 blind review items with blank
   human-label fields.
