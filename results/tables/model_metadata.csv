@@ -1,0 +1,8 @@
+role,model_id,provider_name,base_url,access_date,benchmark,samples_per_problem,temperature,max_tokens
+generation,openai/gpt-4o-mini,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval,1,0.2,1024
+generation,deepseek/deepseek-chat,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval,1,0.2,1024
+generation,qwen/qwen-2.5-72b-instruct,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval,1,0.2,1024
+generation,meta-llama/llama-3.1-8b-instruct,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval,1,0.2,1024
+primary_failure_labeler,openai/gpt-4o-mini,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval failures,,0,150
+primary_logic_subtype_labeler,openai/gpt-4o-mini,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval LOGIC failures,,0,160
+blind_second_subtype_labeler_default,deepseek/deepseek-chat,OpenRouter,https://openrouter.ai/api/v1,2026-06-23,HumanEval LOGIC failures,,0,180

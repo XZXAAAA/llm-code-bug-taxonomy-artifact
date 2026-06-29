@@ -1,0 +1,8 @@
+,count,pct_of_logic,ci95_low,ci95_high
+Wrong algorithm,21,21.9,14.8,31.1
+Missing edge case,16,16.7,10.5,25.4
+Boundary condition,7,7.3,3.6,14.3
+State/update error,1,1.0,0.2,5.7
+Math reasoning error,43,44.8,35.2,54.7
+Premature simplification,5,5.2,2.2,11.6
+Spec partial impl.,3,3.1,1.1,8.8

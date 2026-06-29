@@ -1,0 +1,10 @@
+Independent LLM-vs-LLM LOGIC subtype agreement
+n_aligned=96
+exact_agreement=42/96 (43.8%)
+cohens_kappa=0.305 (fair)
+disagreements=54
+primary_distribution={'BOUNDARY': 7, 'MATH_REASONING': 43, 'MISSING_EDGE': 16, 'PREMATURE_SIMPL': 5, 'SPEC_PARTIAL': 3, 'STATE_UPDATE': 1, 'WRONG_ALGO': 21}
+blind_second_distribution={'BOUNDARY': 11, 'MATH_REASONING': 13, 'MISSING_EDGE': 17, 'SPEC_PARTIAL': 15, 'STATE_UPDATE': 2, 'WRONG_ALGO': 38}
+confusion_matrix=results\tables\auto_label_confusion.csv
+disagreement_file=results\tables\auto_label_disagreements.csv
+Optional human agreement skipped: review_sheet.csv still has blank human labels.

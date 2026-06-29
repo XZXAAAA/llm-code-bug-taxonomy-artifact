@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "Bug Types in LLM-Generated Code: A Reproducible Empirical Pipeline"
+message: "If you use this software or dataset, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: Xie
+    given-names: Zixiao
+    email: zixiaox2@illinois.edu
+    affiliation: University of Illinois Urbana-Champaign
+abstract: >-
+  A reproducible pipeline for generating, testing, labeling, and analyzing bug
+  types in LLM-generated Python code on HumanEval. The software produces failure
+  signals, bug taxonomy labels, logic-error subtype labels, agreement analyses,
+  tables, figures, and manuscript-ready artifacts.
+keywords:
+  - large language models
+  - code generation
+  - software bugs
+  - empirical software engineering
+  - reproducibility
+license: MIT
+repository-code: "TBD"
+url: "TBD"
+version: "0.1.0"
+date-released: "2026-06-23"
+preferred-citation:
+  type: article
+  title: "An Empirical Study of Bug Types in LLM-Generated Code: A Taxonomy and Cross-Model Analysis"
+  authors:
+    - family-names: Xie
+      given-names: Zixiao
+      email: zixiaox2@illinois.edu
+      affiliation: University of Illinois Urbana-Champaign
+  year: 2026
+  journal: "arXiv preprint"
+  url: "TBD"

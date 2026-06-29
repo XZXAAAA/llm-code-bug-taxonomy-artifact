@@ -1,0 +1,15 @@
+# Secrets must never be committed.
+.env
+
+# Python local artifacts.
+__pycache__/
+*.pyc
+*.log
+
+# Build/package artifacts.
+build/
+
+# Third-party templates are referenced in docs, not redistributed.
+submission_materials/official_templates/
+
+# Keep generated data/results in version control for reproducibility.

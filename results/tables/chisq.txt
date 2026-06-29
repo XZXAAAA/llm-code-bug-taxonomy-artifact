@@ -1,0 +1,6 @@
+Chi-square test of bug-category distribution across models
+chi2 = 21.290, dof = 18, p-value = 0.265
+Cramer's V = 0.254
+cells with expected count < 5 = 24/28
+=> does not reject independence at alpha=0.05
+Note: sparse categories make this an exploratory test; interpret with caution.

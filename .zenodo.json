@@ -1,0 +1,37 @@
+{
+  "title": "Bug Types in LLM-Generated Code: A Reproducible Empirical Pipeline",
+  "upload_type": "software",
+  "description": "A reproducible pipeline for generating, testing, labeling, and analyzing bug types in LLM-generated Python code on HumanEval. The artifact includes model generations, execution results, bug labels, LOGIC subtype labels, LLM-vs-LLM agreement outputs, tables, figures, manuscript drafts, and release-audit utilities.",
+  "creators": [
+    {
+      "name": "Xie, Zixiao",
+      "affiliation": "University of Illinois Urbana-Champaign"
+    }
+  ],
+  "license": "MIT",
+  "version": "0.1.0",
+  "publication_date": "2026-06-23",
+  "keywords": [
+    "large language models",
+    "code generation",
+    "software bugs",
+    "empirical software engineering",
+    "reproducibility",
+    "research software"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "TBD: arXiv URL",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "TBD: public repository URL",
+      "relation": "isIdenticalTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Replace TBD identifiers after the public repository and arXiv preprint are available. Do not archive .env or API keys."
+}

@@ -1,0 +1,31 @@
+# Generation and labeling configuration.
+# External model calls use an OpenAI-compatible endpoint.
+
+provider:
+  name: "OpenRouter"
+  base_url: "https://openrouter.ai/api/v1"
+  api_key_env: "OPENROUTER_API_KEY"
+
+models:
+  - "openai/gpt-4o-mini"
+  - "deepseek/deepseek-chat"
+  - "qwen/qwen-2.5-72b-instruct"
+  - "meta-llama/llama-3.1-8b-instruct"
+
+generation:
+  access_date: "2026-06-23"
+  samples_per_problem: 1
+  temperature: 0.2
+  max_tokens: 1024
+  limit_problems: 0
+
+labeling:
+  primary_labeler_model: "openai/gpt-4o-mini"
+  primary_labeler_temperature: 0
+  primary_labeler_max_tokens: 150
+  logic_subtype_labeler_model: "openai/gpt-4o-mini"
+  logic_subtype_labeler_temperature: 0
+  logic_subtype_labeler_max_tokens: 160
+  second_labeler_default_model: "deepseek/deepseek-chat"
+  second_labeler_temperature: 0
+  second_labeler_max_tokens: 180

@@ -1,0 +1,8 @@
+category,count,pct,ci95_low,ci95_high
+LOGIC,96,87.3,79.8,92.3
+BOUNDARY,2,1.8,0.5,6.4
+SPEC,1,0.9,0.2,5.0
+API_MISUSE,5,4.5,2.0,10.2
+TYPE,4,3.6,1.4,9.0
+SYNTAX,1,0.9,0.2,5.0
+OTHER,1,0.9,0.2,5.0

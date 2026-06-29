@@ -1,0 +1,6 @@
+Chi-square test of LOGIC vs non-LOGIC failures across models
+chi2 = 3.394, dof = 3, p-value = 0.3347
+Cramer's V = 0.176
+cells with expected count < 5 = 3/8
+=> does not reject independence at alpha=0.05
+Note: this two-class test is a lower-dimensional companion to the sparse full-category test.

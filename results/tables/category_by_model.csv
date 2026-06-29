@@ -1,0 +1,8 @@
+category,deepseek-chat,gpt-4o-mini,llama-3.1-8b-instruct,qwen-2.5-72b-instruct
+LOGIC,11,16,51,18
+BOUNDARY,0,0,0,2
+SPEC,0,0,1,0
+API_MISUSE,0,3,2,0
+TYPE,0,1,2,1
+SYNTAX,0,0,1,0
+OTHER,0,0,0,1
