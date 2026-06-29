@@ -19,19 +19,5 @@
     "reproducibility",
     "research software"
   ],
-  "related_identifiers": [
-    {
-      "identifier": "TBD: arXiv URL",
-      "relation": "isSupplementTo",
-      "scheme": "url",
-      "resource_type": "publication-preprint"
-    },
-    {
-      "identifier": "TBD: public repository URL",
-      "relation": "isIdenticalTo",
-      "scheme": "url",
-      "resource_type": "software"
-    }
-  ],
-  "notes": "Replace TBD identifiers after the public repository and arXiv preprint are available. Do not archive .env or API keys."
+  "notes": "Public repository: https://github.com/XZXAAAA/llm-code-bug-taxonomy-artifact. Do not archive .env or API keys."
 }

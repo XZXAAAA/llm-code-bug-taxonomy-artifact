@@ -33,11 +33,20 @@ def update_citation(repo_url: str, archive_url: str, arxiv_url: str, dry_run: bo
 def update_zenodo(repo_url: str, arxiv_url: str, dry_run: bool) -> bool:
     path = ROOT / ".zenodo.json"
     data = json.loads(_read(path))
-    for item in data.get("related_identifiers", []):
-        if item.get("relation") == "isSupplementTo":
-            item["identifier"] = arxiv_url
-        elif item.get("relation") == "isIdenticalTo":
-            item["identifier"] = repo_url
+    data["related_identifiers"] = [
+        {
+            "identifier": arxiv_url,
+            "relation": "isSupplementTo",
+            "scheme": "url",
+            "resource_type": "publication-preprint",
+        },
+        {
+            "identifier": repo_url,
+            "relation": "isIdenticalTo",
+            "scheme": "url",
+            "resource_type": "software",
+        },
+    ]
     data["notes"] = "Do not archive .env or API keys."
     text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
     return _write(path, text, dry_run)

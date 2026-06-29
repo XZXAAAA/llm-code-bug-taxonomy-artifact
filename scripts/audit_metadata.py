@@ -94,6 +94,10 @@ def audit_zenodo(failures: list[str]) -> None:
         fail(".zenodo.json creator metadata is incomplete", failures)
 
     related = data.get("related_identifiers", [])
+    if not related:
+        ok(".zenodo.json omits placeholder related_identifiers before public DOI/arXiv links exist")
+        return
+
     relations = {item.get("relation"): item for item in related}
     checks = {
         "isSupplementTo": ("url", "publication-preprint"),
@@ -104,12 +108,12 @@ def audit_zenodo(failures: list[str]) -> None:
         if not item:
             fail(f".zenodo.json missing related identifier relation {relation}", failures)
             continue
-        if item.get("scheme") == scheme and item.get("resource_type") == resource_type:
-            ok(f".zenodo.json relation {relation} has expected scheme/resource_type")
+        if item.get("scheme") == scheme and item.get("resource_type") == resource_type and str(item.get("identifier", "")).startswith("http"):
+            ok(f".zenodo.json relation {relation} has expected URL/scheme/resource_type")
         else:
             fail(
-                f".zenodo.json relation {relation} has scheme/resource_type "
-                f"{item.get('scheme')!r}/{item.get('resource_type')!r}",
+                f".zenodo.json relation {relation} has identifier/scheme/resource_type "
+                f"{item.get('identifier')!r}/{item.get('scheme')!r}/{item.get('resource_type')!r}",
                 failures,
             )
 
